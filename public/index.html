@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>텀블러 공장 제조품질관리</title>
+    <style>
+      :root {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: #19342d;
+        background: #f2f6f3;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      .app-header {
+        min-height: 76px;
+        box-sizing: border-box;
+        width: 100%;
+        padding: 12px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        background: #fff;
+        border-bottom: 1px solid #d8e3dc;
+      }
+
+      .brand-link,
+      .header-actions,
+      .header-actions nav {
+        display: flex;
+        align-items: center;
+      }
+
+      .brand-link {
+        gap: 12px;
+        color: inherit;
+        font-size: 20px;
+        font-weight: 750;
+        text-decoration: none;
+      }
+
+      .brand-link img {
+        width: 44px;
+        height: 44px;
+      }
+
+      .header-actions {
+        gap: 22px;
+      }
+
+      .header-actions nav {
+        gap: 20px;
+      }
+
+      .header-actions a {
+        color: #276447;
+        font-weight: 650;
+      }
+
+      .header-user {
+        color: #40584d;
+        white-space: nowrap;
+      }
+
+      .logout-button {
+        width: auto;
+        margin: 0;
+        padding: 9px 14px;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .page-content {
+        flex: 1;
+        width: min(100% - 40px, 960px);
+        margin: 48px auto;
+      }
+
+      .yellow-notice {
+        margin: 20px auto 0;
+        padding: 16px 24px;
+        width: min(100% - 48px, 960px);
+        box-sizing: border-box;
+        border: 1px solid #e8c45b;
+        border-radius: 10px;
+        background: #fff4c2;
+        color: #493b13;
+        line-height: 1.6;
+      }
+
+      .app-footer {
+        margin-top: auto;
+        padding: 24px;
+        background: #e8efea;
+        color: #40584d;
+        text-align: center;
+      }
+
+      .login-box {
+        width: min(100%, 420px);
+        box-sizing: border-box;
+        margin: 64px auto;
+        padding: 32px;
+        background: #fff;
+        border: 1px solid #d8e3dc;
+        border-radius: 16px;
+        box-shadow: 0 12px 32px rgb(25 52 45 / 8%);
+      }
+
+      h1 {
+        margin-top: 0;
+        font-size: 28px;
+      }
+
+      form,
+      label {
+        display: block;
+      }
+
+      label {
+        margin: 18px 0 8px;
+        font-weight: 650;
+      }
+
+      input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px 14px;
+        border: 1px solid #aebfb4;
+        border-radius: 8px;
+        font: inherit;
+      }
+
+      button {
+        margin-top: 20px;
+        padding: 12px 18px;
+        border: 0;
+        border-radius: 8px;
+        background: #276447;
+        color: #fff;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .error-message {
+        color: #b42318;
+      }
+
+      [hidden] {
+        display: none !important;
+      }
+
+      @media (max-width: 640px) {
+        .app-header {
+          padding-inline: 16px;
+        }
+
+        .brand-link {
+          font-size: 16px;
+        }
+
+        .header-actions {
+          gap: 10px;
+        }
+
+        .header-actions nav {
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="app-header">
+      <a class="brand-link" href="/" data-link aria-label="텀블러 공장 제조품질관리 홈">
+        <img src="/logo.svg" alt="" />
+        <span>텀블러 공장 제조품질관리</span>
+      </a>
+      <div id="header-actions" class="header-actions" hidden>
+        <nav aria-label="주요 메뉴">
+          <a href="/settings" data-link>설정</a>
+          <span id="header-user" class="header-user"></span>
+        </nav>
+        <button id="logout-button" class="logout-button" type="button">로그아웃</button>
+      </div>
+    </header>
+
+    <aside id="yellow-notice" class="yellow-notice" hidden>
+      AI 분석 결과는 보조 자료이며 품질 담당자의 확인이 필요합니다. 최종 출하 승인은 현장 기준에 따라 별도로 진행하세요.
+    </aside>
+
+    <main class="page-content">
+      <section id="login-box" aria-labelledby="login-title">
+        <h1 id="login-title">텀블러 공장 제조품질관리</h1>
+        <form id="login-form">
+          <label for="username">계정</label>
+          <input id="username" name="username" type="text" value="writer" autocomplete="username" required />
+
+          <label for="password">비밀번호</label>
+          <input id="password" name="password" type="password" value="writer1234!" autocomplete="current-password" required />
+
+          <button id="login-button" type="submit">로그인</button>
+          <p id="login-error" role="alert" hidden></p>
+        </form>
+      </section>
+      <section id="app-screen" hidden>
+        <h1 id="screen-title">품질 현황</h1>
+        <section id="not-found-view" hidden>
+          <p>페이지를 찾을 수 없습니다</p>
+          <a href="/" data-link>홈으로 가기</a>
+        </section>
+      </section>
+    </main>
+
+    <footer id="app-footer" class="app-footer" hidden>텀블러 공장 품질관리 시스템입니다.</footer>
+
+    <script src="/app.js?v=6" defer></script>
+  </body>
+</html>
