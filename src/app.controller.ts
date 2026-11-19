@@ -1,5 +1,5 @@
-import { All, Body, Controller, Get, HttpStatus, Post, Req, Res } from '@nestjs/common';
-import type { Request, Response } from 'express';
+import { Body, Controller, Get, Next, Post, Req, Res } from '@nestjs/common';
+import type { NextFunction, Request, Response } from 'express';
 import path from 'node:path';
 
 interface AuthUser {
@@ -68,19 +68,12 @@ export class AppController {
   }
 
   @Get(['/', '*path'])
-  showPage(@Req() request: Request, @Res() response: Response): void {
+  showPage(@Req() request: Request, @Res() response: Response, @Next() next: NextFunction): void {
     if (request.path === '/api' || request.path.startsWith('/api/')) {
-      response.status(404).end();
+      next();
       return;
     }
 
     response.sendFile(path.join(process.cwd(), 'public', 'index.html'));
-  }
-
-  @All('api/{*path}')
-  unknownApi(@Res() response: Response): void {
-    response
-      .status(HttpStatus.NOT_FOUND)
-      .json({ error: '요청한 주소를 찾을 수 없습니다.' });
   }
 }

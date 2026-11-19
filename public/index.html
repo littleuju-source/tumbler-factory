@@ -155,6 +155,265 @@
         color: #b42318;
       }
 
+      .screen-heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+      }
+
+      .screen-heading h1 {
+        margin-bottom: 0;
+      }
+
+      .home-date {
+        margin-top: 20px;
+      }
+
+      .home-summary-cards {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 20px;
+      }
+
+      .home-summary-card {
+        display: grid;
+        gap: 12px;
+        width: auto;
+        margin: 0;
+        padding: 20px;
+        background: #fff;
+        border: 1px solid #d8e3dc;
+        color: #19342d;
+        text-align: left;
+      }
+
+      .home-summary-card[aria-pressed="true"] {
+        border: 3px solid #276447;
+        background: #e1efe5;
+      }
+
+      .home-summary-card strong {
+        font-size: 28px;
+      }
+
+      .home-inspection-list {
+        display: grid;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .home-inspection-card {
+        display: grid;
+        grid-template-columns: 112px 1fr;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+        margin: 0;
+        padding: 12px;
+        border: 1px solid #d8e3dc;
+        color: #19342d;
+        background: #fff;
+        text-align: left;
+      }
+
+      .home-inspection-card:hover { background: #f2f6f3; }
+
+      .home-inspection-card img,
+      .home-inspection-card .no-photo {
+        display: grid;
+        width: 112px;
+        height: 88px;
+        place-items: center;
+        object-fit: cover;
+        border-radius: 8px;
+        background: #edf2ee;
+      }
+
+      .home-inspection-details { display: grid; gap: 5px; }
+
+      .home-inspection-details strong { overflow-wrap: anywhere; }
+
+      .home-list-message { margin: 18px 0 0; color: #52665b; }
+
+      @media (max-width: 700px) {
+        .home-summary-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      }
+
+      .inspection-fields {
+        max-width: 620px;
+      }
+
+      .inspection-fields select,
+      .inspection-fields textarea {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px 14px;
+        border: 1px solid #aebfb4;
+        border-radius: 8px;
+        background: #fff;
+        color: inherit;
+        font: inherit;
+      }
+
+      .inspection-fields textarea {
+        min-height: 110px;
+        resize: vertical;
+      }
+
+      .inspection-fields [type="datetime-local"],
+      .inspection-fields [type="number"] {
+        margin-bottom: 0;
+      }
+
+      .weight-range {
+        margin: 12px 0 20px;
+        padding: 12px 14px;
+        border-radius: 8px;
+        background: #fff4c2;
+        color: #493b13;
+      }
+
+      .inspection-summary {
+        display: grid;
+        gap: 8px;
+        margin-bottom: 24px;
+      }
+
+      .inspection-summary p {
+        margin: 0;
+      }
+
+      .inspection-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        border-bottom: 1px solid #d8e3dc;
+      }
+
+      .inspection-tabs button {
+        width: auto;
+        margin: 0;
+        padding: 12px 14px;
+        border-radius: 8px 8px 0 0;
+        color: #40584d;
+        background: #edf2ee;
+      }
+
+      .inspection-tabs button[aria-selected="true"] {
+        color: #fff;
+        background: #276447;
+      }
+
+      .inspection-tab-panel {
+        min-height: 48px;
+        padding-top: 18px;
+      }
+
+      .inspection-detail-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+        gap: 28px;
+      }
+
+      .detail-main-image {
+        display: grid;
+        min-height: 280px;
+        place-items: center;
+        background: #edf2ee;
+      }
+
+      .detail-main-image img {
+        display: block;
+        max-width: 100%;
+        max-height: 480px;
+        object-fit: contain;
+      }
+
+      .detail-thumbnails {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .detail-thumbnails button {
+        width: 64px;
+        height: 64px;
+        margin: 0;
+        padding: 2px;
+        background: #edf2ee;
+      }
+
+      .detail-thumbnails button[aria-current="true"] {
+        outline: 3px solid #276447;
+      }
+
+      .detail-thumbnails img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .detail-values {
+        display: grid;
+        gap: 12px;
+        margin: 0;
+      }
+
+      .detail-values div {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: 12px;
+      }
+
+      .detail-values dt { font-weight: 700; }
+      .detail-values dd { margin: 0; overflow-wrap: anywhere; }
+
+      .detail-edit {
+        display: grid;
+        gap: 8px;
+        margin-top: 24px;
+      }
+
+      .detail-edit label { margin-bottom: 0; }
+
+      .detail-edit select {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px 14px;
+        border: 1px solid #aebfb4;
+        border-radius: 8px;
+        background: #fff;
+        color: inherit;
+        font: inherit;
+      }
+
+      @media (max-width: 680px) {
+        .inspection-detail-grid { grid-template-columns: 1fr; }
+      }
+
+      .inspection-detail-error {
+        color: #b42318;
+        font-weight: 600;
+      }
+
+      .image-previews {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .image-previews img {
+        width: 92px;
+        height: 92px;
+        object-fit: cover;
+        border: 1px solid #d8e3dc;
+        border-radius: 8px;
+      }
+
       [hidden] {
         display: none !important;
       }
@@ -200,7 +459,7 @@
     <main class="page-content">
       <section id="login-box" aria-labelledby="login-title">
         <h1 id="login-title">텀블러 공장 제조품질관리</h1>
-        <form id="login-form">
+        <form id="login-form" method="post" action="/api/login">
           <label for="username">계정</label>
           <input id="username" name="username" type="text" value="writer" autocomplete="username" required />
 
@@ -212,7 +471,103 @@
         </form>
       </section>
       <section id="app-screen" hidden>
-        <h1 id="screen-title">품질 현황</h1>
+        <div class="screen-heading">
+          <h1 id="screen-title">품질 현황</h1>
+          <button id="new-inspection-link" type="button" data-route="/inspections/new" hidden>사진 등록</button>
+        </div>
+        <section id="inspection-new-view" class="screen-view" hidden>
+          <form id="inspection-fields" class="inspection-fields">
+            <label for="inspection-product">제품</label>
+            <select id="inspection-product" name="product_id" required></select>
+
+            <label for="inspection-date">검사일시</label>
+            <input id="inspection-date" name="inspected_at" type="datetime-local" step="1" required />
+
+            <label for="inspection-revision">검사기준</label>
+            <select id="inspection-revision" name="revision">
+              <option value="Rev.A">Rev.A</option>
+              <option value="Rev.B">Rev.B</option>
+            </select>
+
+            <label for="inspection-weight">중량(g)</label>
+            <input id="inspection-weight" name="weight_g" type="number" step="any" />
+            <p id="inspection-weight-range" class="weight-range" aria-live="polite">기준 중량을 불러오는 중입니다.</p>
+
+            <label for="inspection-memo">메모</label>
+            <textarea id="inspection-memo" name="memo"></textarea>
+
+            <label for="inspection-images">사진</label>
+            <input id="inspection-images" name="images" type="file" accept="image/*" multiple />
+            <div id="inspection-image-previews" class="image-previews" aria-live="polite"></div>
+
+            <button id="inspection-submit" type="submit">검사 등록</button>
+            <p id="inspection-submit-error" class="error-message" role="alert" hidden></p>
+            <p id="inspection-submit-success" role="status" hidden></p>
+          </form>
+        </section>
+        <section id="home-view" class="screen-view" hidden>
+          <label class="home-date" for="home-date">날짜</label>
+          <input id="home-date" type="date" />
+          <p id="home-summary-error" class="error-message" role="alert" hidden></p>
+          <div class="home-summary-cards" aria-live="polite">
+            <button type="button" class="home-summary-card" data-home-filter="all" aria-pressed="false"><span>검사 건수</span><strong id="home-total">0</strong></button>
+            <button type="button" class="home-summary-card" data-home-filter="NG" aria-pressed="false"><span>NG 건수</span><strong id="home-ng">0</strong></button>
+            <button type="button" class="home-summary-card" data-home-filter="HOLD" aria-pressed="false"><span>HOLD 건수</span><strong id="home-hold">0</strong></button>
+            <button type="button" class="home-summary-card" data-home-filter="review-pending" aria-pressed="false"><span>보고서 검토 대기</span><strong id="home-review-pending">0</strong></button>
+          </div>
+          <p id="home-list-error" class="error-message" role="alert" hidden></p>
+          <div id="home-inspection-list" class="home-inspection-list" aria-live="polite"></div>
+        </section>
+        <section id="settings-view" class="screen-view" hidden>
+          <h2>저장소 상태</h2>
+          <p id="storage-status" role="status">저장소 상태를 불러오는 중입니다.</p>
+        </section>
+        <section id="inspection-detail-view" class="screen-view" hidden>
+          <p id="inspection-detail-error" class="inspection-detail-error" role="alert" hidden></p>
+          <div id="inspection-detail-content" hidden>
+            <div class="inspection-summary">
+              <p>검사번호: <strong id="detail-inspection-id"></strong></p>
+              <p>제품: <strong id="detail-product-name"></strong></p>
+              <p>판정: <strong id="detail-decision"></strong></p>
+              <p id="detail-content-version"></p>
+            </div>
+            <div class="inspection-tabs" role="tablist" aria-label="검사 상세 탭">
+              <button type="button" role="tab" id="detail-tab-1" aria-selected="true" aria-controls="detail-panel">① 사진·측정값</button>
+              <button type="button" role="tab" id="detail-tab-2" aria-selected="false" aria-controls="detail-panel">② AI 결과 확인</button>
+              <button type="button" role="tab" id="detail-tab-3" aria-selected="false" aria-controls="detail-panel">③ 검사기준과 비교하기</button>
+              <button type="button" role="tab" id="detail-tab-4" aria-selected="false" aria-controls="detail-panel">④ 내 판단 기록</button>
+            </div>
+            <div id="detail-panel" class="inspection-tab-panel" role="tabpanel" aria-labelledby="detail-tab-1">
+              <div id="detail-photo-measurement" class="inspection-detail-grid">
+                <div>
+                  <div id="detail-main-image" class="detail-main-image"></div>
+                  <div id="detail-thumbnails" class="detail-thumbnails" aria-label="검사 사진"></div>
+                </div>
+                <dl class="detail-values">
+                  <div><dt>제품</dt><dd id="detail-value-product"></dd></div>
+                  <div><dt>검사일시</dt><dd id="detail-value-date"></dd></div>
+                  <div><dt>검사기준</dt><dd id="detail-value-revision"></dd></div>
+                  <div><dt>중량</dt><dd id="detail-value-weight"></dd></div>
+                  <div><dt>메모</dt><dd id="detail-value-memo"></dd></div>
+                </dl>
+                <form id="detail-edit-form" class="detail-edit">
+                  <label for="detail-edit-product">제품</label>
+                  <select id="detail-edit-product" name="product_id"></select>
+
+                  <label for="detail-edit-date">검사일시</label>
+                  <input id="detail-edit-date" name="inspected_at" type="datetime-local" step="1" required />
+
+                  <label for="detail-edit-weight">중량(g)</label>
+                  <input id="detail-edit-weight" name="weight_g" type="number" step="any" />
+
+                  <button id="detail-edit-save" type="submit">저장</button>
+                  <p id="detail-edit-error" class="error-message" role="alert" hidden></p>
+                </form>
+              </div>
+              <p id="detail-placeholder" hidden></p>
+            </div>
+          </div>
+        </section>
         <section id="not-found-view" hidden>
           <p>페이지를 찾을 수 없습니다</p>
           <a href="/" data-link>홈으로 가기</a>
@@ -222,6 +577,6 @@
 
     <footer id="app-footer" class="app-footer" hidden>텀블러 공장 품질관리 시스템입니다.</footer>
 
-    <script src="/app.js?v=6" defer></script>
+    <script src="/app.js?v=14" defer></script>
   </body>
 </html>
